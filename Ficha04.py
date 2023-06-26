@@ -25,15 +25,27 @@ print(f'Variação percentual no consumo de energia elétrica em Portugal entre 
 # # === Explorar funções do Numpy
 
 import numpy as np
-anos = np.array([2001,2011,2021])
+anos = np.array(['2001','2011','2021'])
 PIB_milhoes = np.array([ 139222.3, 180748.3,187432.5])
 Investimento_percent = np.array([0.267,0.274,0.184]) 
 
 Investimento_milhoes = PIB_milhoes*Investimento_percent
 
-print('\nInvestimento em milhões de euros nos 3 censos do séc XXI')
+print('\nInvestimento em milhões de euros entre 2001 e 2021')
 print(anos)
 print(Investimento_milhoes)
 
 print('\nMédia do Investimento em milhões de euros')
 print(np.mean(Investimento_milhoes))
+
+
+# # === Explorar funções do Matplotlib
+
+import matplotlib.pyplot as plt
+
+plt.barh(anos,Investimento_milhoes,color='#AA0000',label='Investimento')
+plt.title('Investimento em milhões de euros entre 2001 e 2021')
+plt.ylabel('Anos', fontdict='Bahnschrift')
+plt.xlabel('Milhões €', fontdict='Bahnschrift')
+plt.legend()
+plt.show()
